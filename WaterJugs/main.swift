@@ -11,7 +11,7 @@ import Foundation
 let jugA = Jug(5)
 let jugB = Jug(3)
 
-let solver = JugSolver()
+var solver = JugSolver()
 
 let result = solver.solve(jugs: JugPair(jugA, jugB), amountNeeded: 4)
 

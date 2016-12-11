@@ -17,7 +17,7 @@ extension Jug
 
 struct JugSolver
 {
-    func solve (jugs: JugPair, amountNeeded: Int) -> String
+    mutating func solve (jugs: JugPair, amountNeeded: Int) -> String
     {
         var output = String()
 
@@ -28,14 +28,15 @@ struct JugSolver
         return "Could not be solved"
     }
 
-    private func recursiveSolve (jugs: JugPair, amountNeeded: Int, output: inout String) -> Bool
+    private mutating func recursiveSolve (jugs: JugPair, amountNeeded: Int, output: inout String) -> Bool
     {
+        seenBefore.insert(jugs)
+
         for jugAction in Action.getAllActions()
         {
             print("\(jugs.a),\(jugs.b) -> \(jugAction.description)")
             if let result = jugAction.action(jugs)
             {
-
                 let beforeJugs = jugs.a.description   + "," + jugs.b.description
                 let afterJugs  = result.a.description + "," + result.b.description
 
@@ -55,6 +56,7 @@ struct JugSolver
                 else
                 {
                     print("again")
+                    seenBefore.insert(result)
                     return recursiveSolve(jugs: result, amountNeeded: amountNeeded, output: &output)
                 }
             }
@@ -76,7 +78,8 @@ struct JugSolver
     private func abandonHope(jugs: JugPair) -> Bool
     {
         return (jugs.a.isEmpty() && jugs.b.isEmpty()) ||
-               (jugs.a.isFull()  && jugs.b.isFull())
+               (jugs.a.isFull()  && jugs.b.isFull())  ||
+               seenBefore.contains (jugs)
     }
 
     var seenBefore = Set<JugPair>()
