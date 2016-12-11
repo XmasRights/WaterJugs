@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B9B99A51DFE0C1A00822216 /* Jug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9B99A41DFE0C1A00822216 /* Jug.swift */; };
+		4B9B99A71DFE0C5800822216 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9B99A61DFE0C5800822216 /* Action.swift */; };
+		4B9B99A91DFE0C6D00822216 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9B99A81DFE0C6D00822216 /* Types.swift */; };
 		4BB6C4531DFE0B7C00233EA6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB6C4521DFE0B7C00233EA6 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +26,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4B9B99A41DFE0C1A00822216 /* Jug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jug.swift; sourceTree = "<group>"; };
+		4B9B99A61DFE0C5800822216 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		4B9B99A81DFE0C6D00822216 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		4BB6C44F1DFE0B7C00233EA6 /* WaterJugs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WaterJugs; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB6C4521DFE0B7C00233EA6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				4BB6C4521DFE0B7C00233EA6 /* main.swift */,
+				4B9B99A41DFE0C1A00822216 /* Jug.swift */,
+				4B9B99A81DFE0C6D00822216 /* Types.swift */,
+				4B9B99A61DFE0C5800822216 /* Action.swift */,
 			);
 			path = WaterJugs;
 			sourceTree = "<group>";
@@ -121,7 +130,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B9B99A51DFE0C1A00822216 /* Jug.swift in Sources */,
+				4B9B99A71DFE0C5800822216 /* Action.swift in Sources */,
 				4BB6C4531DFE0B7C00233EA6 /* main.swift in Sources */,
+				4B9B99A91DFE0C6D00822216 /* Types.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
