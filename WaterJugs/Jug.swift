@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct Jug: CustomStringConvertible
+struct Jug: CustomStringConvertible, Equatable
 {
     let contents: Int
     let capacity: Int
 
     var description: String
     {
-        return "\(contents) (\(capacity))"
+        return "\(contents)(\(capacity))"
     }
 
     init (_ size: Int)
@@ -32,5 +32,11 @@ struct Jug: CustomStringConvertible
 
         contents = cont
         capacity = cap
+    }
+
+    static func ==(lhs: Jug, rhs: Jug) -> Bool
+    {
+        return lhs.capacity == rhs.capacity
+               && lhs.contents == rhs.contents
     }
 }

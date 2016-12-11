@@ -32,38 +32,52 @@ struct JugSolver
     {
         for jugAction in Action.getAllActions()
         {
+            print("\(jugs.a),\(jugs.b) -> \(jugAction.description)")
             if let result = jugAction.action(jugs)
             {
-                let actionString = jugAction.description
-                let jugString    = result.0.description + "," + result.1.description
 
-                output += actionString + jugString + "\n"
+                let beforeJugs = jugs.a.description   + "," + jugs.b.description
+                let afterJugs  = result.a.description + "," + result.b.description
+
+                output +=  beforeJugs + " -> " + jugAction.description + " -> " + afterJugs + "\n"
+
+                print(" -> \(afterJugs)")
 
                 if resultAchieved(jugs: result, amountNeeded: amountNeeded)
                 {
+                    print("FINISHED")
                     return true
                 }
                 else if abandonHope(jugs: result)
                 {
-                    return false
+                    print("DEAD END")
                 }
                 else
                 {
+                    print("again")
                     return recursiveSolve(jugs: result, amountNeeded: amountNeeded, output: &output)
                 }
             }
+            else
+            {
+                print(" -> INVALID ACTION")
+            }
         }
+
+        print("done")
         return false
     }
 
     private func resultAchieved(jugs: JugPair, amountNeeded: Int) -> Bool
     {
-        return jugs.0.contents == amountNeeded || jugs.1.contents == amountNeeded
+        return jugs.a.contents == amountNeeded || jugs.b.contents == amountNeeded
     }
 
     private func abandonHope(jugs: JugPair) -> Bool
     {
-        return (jugs.0.isEmpty() && jugs.1.isEmpty()) ||
-               (jugs.0.isFull()  && jugs.1.isFull())
+        return (jugs.a.isEmpty() && jugs.b.isEmpty()) ||
+               (jugs.a.isFull()  && jugs.b.isFull())
     }
+
+    var seenBefore = Set<JugPair>()
 }

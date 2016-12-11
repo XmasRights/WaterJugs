@@ -42,60 +42,60 @@ struct Action
 {
     static func fillJugOne  (jugs: JugPair) -> JugPair?
     {
-        if (!jugs.0.isFull())
+        if (!jugs.a.isFull())
         {
-            return (jugs.0.fill(),  jugs.1)
+            return JugPair(jugs.a.fill(),  jugs.b)
         }
         return nil
     }
 
     static func fillJugTwo  (jugs: JugPair) -> JugPair?
     {
-        if (!jugs.1.isFull())
+        if (!jugs.a.isFull())
         {
-            return (jugs.0, jugs.1.fill())
+            return JugPair(jugs.a, jugs.b.fill())
         }
         return nil
     }
 
     static func emptyJugOne (jugs: JugPair) -> JugPair?
     {
-        if (!jugs.0.isEmpty())
+        if (!jugs.a.isEmpty())
         {
-            return (jugs.0.empty(), jugs.1)
+            return JugPair(jugs.a.empty(), jugs.b)
         }
         return nil
     }
 
     static func emptyJugTwo (jugs: JugPair) -> JugPair?
     {
-        if (!jugs.1.isEmpty())
+        if (!jugs.b.isEmpty())
         {
-            return (jugs.0, jugs.1.empty())
+            return JugPair(jugs.a, jugs.b.empty())
         }
         return nil
     }
 
     static func transferFromOneToTwo (jugs: JugPair) -> JugPair?
     {
-        if (jugs.0.isEmpty() || jugs.1.isFull())
+        if (jugs.a.isEmpty() || jugs.b.isFull())
         {
             return nil
         }
 
-        if (jugs.0.contents >= jugs.1.spaceAvailable)
+        if (jugs.a.contents >= jugs.b.spaceAvailable)
         {
-            return (jugs.0.empty(amount: jugs.1.spaceAvailable), jugs.1.fill())
+            return JugPair(jugs.a.empty(amount: jugs.b.spaceAvailable), jugs.b.fill())
         }
         else
         {
-            return (jugs.0.empty(), jugs.1.fill(amount: jugs.0.contents))
+            return JugPair(jugs.a.empty(), jugs.b.fill(amount: jugs.a.contents))
         }
     }
 
     static func transferFromTwoToOne (jugs: JugPair) -> JugPair?
     {
-        if (jugs.1.isEmpty() || jugs.0.isFull())
+        if (jugs.b.isEmpty() || jugs.a.isFull())
         {
             return nil
         }
@@ -121,6 +121,6 @@ struct Action
 
     private static func swap (_ jugs: JugPair) -> JugPair
     {
-        return (jugs.1, jugs.0)
+        return JugPair(jugs.b, jugs.a)
     }
 }

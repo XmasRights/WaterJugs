@@ -13,7 +13,7 @@ let jugB = Jug(3)
 
 let solver = JugSolver()
 
-let result = solver.solve(jugs: (jugA, jugB), amountNeeded: 4)
+let result = solver.solve(jugs: JugPair(jugA, jugB), amountNeeded: 4)
 
 print (result)
 

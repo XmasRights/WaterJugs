@@ -8,7 +8,30 @@
 
 import Foundation
 
-typealias JugPair = (Jug, Jug)
+struct JugPair: Hashable
+{
+    let a : Jug
+    let b : Jug
+
+    init(_ one: Jug, _ two: Jug)
+    {
+        a = one
+        b = two
+    }
+
+    static func ==(lhs: JugPair, rhs: JugPair) -> Bool
+    {
+        return lhs.a == rhs.a
+                && lhs.b == rhs.b
+    }
+
+    var hashValue: Int
+    {
+        get {
+            return "\(a),\(b)".hashValue
+        }
+    }
+}
 
 struct JugAction
 {
