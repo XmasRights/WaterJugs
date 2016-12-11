@@ -40,13 +40,49 @@ extension Jug
 
 struct Action
 {
-    static func fillJugOne  (jugs: JugPair) -> JugPair { return (jugs.0.fill(),  jugs.1        ) }
-    static func fillJugTwo  (jugs: JugPair) -> JugPair { return (jugs.0,         jugs.1.fill() ) }
-    static func emptyJugOne (jugs: JugPair) -> JugPair { return (jugs.0.empty(), jugs.1        ) }
-    static func emptyJugTwo (jugs: JugPair) -> JugPair { return (jugs.0,         jugs.1.empty()) }
-
-    static func transferFromOneToTwo (jugs: JugPair) -> JugPair
+    static func fillJugOne  (jugs: JugPair) -> JugPair?
     {
+        if (!jugs.0.isFull())
+        {
+            return (jugs.0.fill(),  jugs.1)
+        }
+        return nil
+    }
+
+    static func fillJugTwo  (jugs: JugPair) -> JugPair?
+    {
+        if (!jugs.1.isFull())
+        {
+            return (jugs.0, jugs.1.fill())
+        }
+        return nil
+    }
+
+    static func emptyJugOne (jugs: JugPair) -> JugPair?
+    {
+        if (!jugs.0.isEmpty())
+        {
+            return (jugs.0.empty(), jugs.1)
+        }
+        return nil
+    }
+
+    static func emptyJugTwo (jugs: JugPair) -> JugPair?
+    {
+        if (!jugs.1.isEmpty())
+        {
+            return (jugs.0, jugs.1.empty())
+        }
+        return nil
+    }
+
+    static func transferFromOneToTwo (jugs: JugPair) -> JugPair?
+    {
+        if (jugs.0.isEmpty() || jugs.1.isFull())
+        {
+            return nil
+        }
+
         if (jugs.0.contents >= jugs.1.spaceAvailable)
         {
             return (jugs.0.empty(amount: jugs.1.spaceAvailable), jugs.1.fill())
@@ -57,11 +93,19 @@ struct Action
         }
     }
 
-    static func transferFromTwoToOne (jugs: JugPair) -> JugPair
+    static func transferFromTwoToOne (jugs: JugPair) -> JugPair?
     {
-        let swapped     = swap(jugs)
-        let transferred = transferFromOneToTwo(jugs: swapped)
-        return swap(transferred)
+        if (jugs.1.isEmpty() || jugs.0.isFull())
+        {
+            return nil
+        }
+
+        let swapped = swap(jugs)
+        if let transferred = transferFromOneToTwo(jugs: swapped)
+        {
+            return swap(transferred)
+        }
+        return nil
     }
 
     static func getAllActions() -> [JugAction]

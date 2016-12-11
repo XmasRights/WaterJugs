@@ -12,6 +12,6 @@ typealias JugPair = (Jug, Jug)
 
 struct JugAction
 {
-    let action:      (JugPair) -> JugPair
+    let action:      (JugPair) -> JugPair?
     let description: String
 }

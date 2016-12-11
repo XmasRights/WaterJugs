@@ -8,5 +8,13 @@
 
 import Foundation
 
-print("Hello, World!")
+let jugA = Jug(5)
+let jugB = Jug(3)
+
+let solver = JugSolver()
+
+let result = solver.solve(jugs: (jugA, jugB), amountNeeded: 4)
+
+print (result)
+
 
