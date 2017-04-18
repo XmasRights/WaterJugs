@@ -11,11 +11,32 @@ import SearchTreeKit
 
 struct Sovler
 {
-    typealias Jugs = SearchNode<JugPair>
-    
-    func run()
+    static func run()
     {
-        let start = Jugs(JugPair(3, 5))
+        print("Start")
+        
+        let start   = JugsNode(Jugs(3, 5))
+        let actions = JugActions.all()
+        
+        guard let result = SearchTreeKit.breadthFirstSearch(start: start, actions: actions, end: end(4))
+            else { print("Could not find solution"); return }
+        
+        print("SUCCESS!")
+        print(result.log)
     }
     
+    private static func end (_ litres: Int) -> (JugsNode) -> SearchTreeKit.Result
+    {
+        return { (jugs: JugsNode) -> SearchTreeKit.Result in
+            
+//            print("NEW EVALUATION")
+//            print(jugs.log)
+//            print("\n")
+            
+            if jugs.value.one.contents == litres { return .Pass }
+            if jugs.value.two.contents == litres { return .Pass }
+            
+            return .Continue
+        }
+    }
 }

@@ -14,7 +14,9 @@
 		4BD49E831EA6B9E5007B1896 /* SearchTreeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD49E7C1EA6B9DC007B1896 /* SearchTreeKit.framework */; };
 		4BD49E851EA6B9FC007B1896 /* Jug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD49E841EA6B9FC007B1896 /* Jug.swift */; };
 		4BD49E871EA6BA2A007B1896 /* Solver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD49E861EA6BA2A007B1896 /* Solver.swift */; };
-		4BD49E8A1EA6BC33007B1896 /* JugPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD49E891EA6BC33007B1896 /* JugPair.swift */; };
+		4BD49E8A1EA6BC33007B1896 /* Jugs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD49E891EA6BC33007B1896 /* Jugs.swift */; };
+		4BD49E8F1EA6BFF1007B1896 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD49E8E1EA6BFF1007B1896 /* Action.swift */; };
+		4BD49E921EA6C17D007B1896 /* JugExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD49E911EA6C17D007B1896 /* JugExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +60,9 @@
 		4BD49E741EA6B9DC007B1896 /* SearchTreeKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SearchTreeKit.xcodeproj; path = SearchTreeKit/SearchTreeKit.xcodeproj; sourceTree = "<group>"; };
 		4BD49E841EA6B9FC007B1896 /* Jug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jug.swift; sourceTree = "<group>"; };
 		4BD49E861EA6BA2A007B1896 /* Solver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Solver.swift; sourceTree = "<group>"; };
-		4BD49E891EA6BC33007B1896 /* JugPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JugPair.swift; sourceTree = "<group>"; };
+		4BD49E891EA6BC33007B1896 /* Jugs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jugs.swift; sourceTree = "<group>"; };
+		4BD49E8E1EA6BFF1007B1896 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		4BD49E911EA6C17D007B1896 /* JugExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JugExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +97,8 @@
 		4B3B33B81EA6B880007A5DB0 /* WaterJugSolver */ = {
 			isa = PBXGroup;
 			children = (
-				4BD49E841EA6B9FC007B1896 /* Jug.swift */,
-				4BD49E891EA6BC33007B1896 /* JugPair.swift */,
+				4BD49E901EA6C166007B1896 /* Jugs */,
+				4BD49E8E1EA6BFF1007B1896 /* Action.swift */,
 				4BD49E861EA6BA2A007B1896 /* Solver.swift */,
 				4B3B33B91EA6B880007A5DB0 /* AppDelegate.swift */,
 				4B3B33BB1EA6B880007A5DB0 /* ViewController.swift */,
@@ -114,6 +118,16 @@
 				4BD49E821EA6B9DC007B1896 /* SearchTreeKit iOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4BD49E901EA6C166007B1896 /* Jugs */ = {
+			isa = PBXGroup;
+			children = (
+				4BD49E841EA6B9FC007B1896 /* Jug.swift */,
+				4BD49E891EA6BC33007B1896 /* Jugs.swift */,
+				4BD49E911EA6C17D007B1896 /* JugExtensions.swift */,
+			);
+			name = Jugs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,9 +240,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B3B33BC1EA6B880007A5DB0 /* ViewController.swift in Sources */,
-				4BD49E8A1EA6BC33007B1896 /* JugPair.swift in Sources */,
+				4BD49E8F1EA6BFF1007B1896 /* Action.swift in Sources */,
+				4BD49E8A1EA6BC33007B1896 /* Jugs.swift in Sources */,
 				4BD49E851EA6B9FC007B1896 /* Jug.swift in Sources */,
 				4BD49E871EA6BA2A007B1896 /* Solver.swift in Sources */,
+				4BD49E921EA6C17D007B1896 /* JugExtensions.swift in Sources */,
 				4B3B33BA1EA6B880007A5DB0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
