@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0BB22665BB6BB8ADC4B6A431BE9223BE8869D8D1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "0BB22665BB6BB8ADC4B6A431BE9223BE8869D8D1" : 9223372036854775807,
+    "8D2F5D9A540E81B320A7504B7CCC907E47E025FD" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5BCEC5DB-68B6-47DB-9279-82EDFB0787C1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "0BB22665BB6BB8ADC4B6A431BE9223BE8869D8D1" : "WaterJugs\/",
+    "8D2F5D9A540E81B320A7504B7CCC907E47E025FD" : "WaterJugs\/SearchTreeKit\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WaterJugSolver",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WaterJugSolver.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:XmasRights\/WaterJugs.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0BB22665BB6BB8ADC4B6A431BE9223BE8869D8D1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:XmasRights\/SearchTreeKit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8D2F5D9A540E81B320A7504B7CCC907E47E025FD"
+    }
+  ]
+}
