@@ -1,0 +1,3 @@
+[submodule "SearchTreeKit"]
+	path = SearchTreeKit
+	url = git@github.com:XmasRights/SearchTreeKit.git
