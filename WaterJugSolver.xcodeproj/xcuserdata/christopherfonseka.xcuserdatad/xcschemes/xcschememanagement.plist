@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>WaterJugs.xcscheme</key>
+		<key>WaterJugSolver.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4BB6C44E1DFE0B7B00233EA6</key>
+		<key>4B3B33B51EA6B880007A5DB0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
